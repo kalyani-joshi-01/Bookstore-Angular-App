@@ -1,0 +1,17 @@
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container">
+        <h1 ><a class="navbar-brand" routerLink="dashboard">Book Store</a></h1>
+        
+        
+         <ul class="navbar-nav ml-auto text-center">
+             <li class="nav-item"><a class="nav-link" *ngIf="loggedIn" routerLink="books" routerLinkActive="active">Book List</a></li>
+             <li class="nav-item"><a class="nav-link"*ngIf="loggedIn" routerLink="create-book" routerLinkActive="active">Add Book</a></li>
+             <li class="nav-item"><a class="nav-link" *ngIf="loggedIn" routerLinkActive="active" (click)="logoutUser()">Logout</a></li>
+             <li class="nav-item"><a class="nav-link" *ngIf="!loggedIn" routerLink="/login">Login</a></li>
+             
+
+         </ul>
+        
+    </div>
+</nav>

@@ -1,0 +1,66 @@
+    
+<div class="col-md-6 offset-md-3 mt">
+
+    <h1><b> Book Data</b></h1>
+    <form #createbook="ngForm" (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group mb">
+            <label for="bookTitle"><strong>Book Title</strong></label>
+            <input type="text" class="form-control" id="bookTitle"
+                [(ngModel)] = "book.bookTitle" name="bookTitlename" required #bookTitle="ngModel">
+            <div>
+                <small *ngIf="bookTitle.invalid && bookTitle.touched">Book Tiltle is a required field</small>
+            </div>
+             
+        </div>
+    
+        <div class="form-group mb">
+            <label><strong>Author Name</strong></label>
+            <input type="text" class="form-control" id="authorName"
+                [(ngModel)] = "book.authorName" name="authorName" required #authorName="ngModel">
+                <div>
+                    <small *ngIf="authorName.invalid && authorName.touched">Author Name is a required field</small>
+                </div>
+        </div>
+    
+        <div class="form-group mb">
+            <label><strong>Publisher Name</strong></label>
+            <input type="text" class="form-control" id="publisher"
+                [(ngModel)] = "book.publisher" name="publisher" required #publisher="ngModel"> 
+                <div>
+                    <small *ngIf="publisher.invalid && publisher.touched">Publisher Name is a required field</small>
+                </div>
+        </div>
+    
+        <div class="form-group mb">
+            <label><strong>Book Type</strong></label>
+            <input type="text" class="form-control" id="bookType"
+                [(ngModel)] = "book.bookType" name="bookType" required #bookType="ngModel">
+                <div>
+                    <small *ngIf="bookType.invalid && bookType.touched">Book Type is a required field</small>
+                </div>
+        </div>
+    
+        <div class="form-group mb">
+            <label><strong>Price</strong></label>
+            <input type="number" class="form-control" id="price"
+                [(ngModel)] = "book.price" name="price" required #price="ngModel">
+                <div>
+                    <small *ngIf="price.invalid && price.touched">Price is a required field</small>
+                </div>
+        </div>
+    
+        <div class="form-group mb">
+            <label><strong>Stock</strong></label>
+            <input type="number" class="form-control" id="stock"
+                [(ngModel)] = "book.stock" name="stock" required #stock="ngModel">
+                <div>
+                    <small *ngIf="stock.invalid && stock.touched">Stock is a required field</small>
+                </div>
+        </div>
+        <br/>
+    
+        <button class="btn btn-outline-success" [disabled]="createbook.invalid" type="submit">Submit</button>
+    </form>
+    </div>
+    

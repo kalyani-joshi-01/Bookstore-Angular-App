@@ -1,0 +1,30 @@
+html, 
+body { 
+    height: 100%; 
+}
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.text-center{
+    text-align: center;
+}
+
+.mt{
+    margin-top:  20px;
+}
+.mr{
+    margin-right:  50px;
+}
+.mb{
+    margin-bottom: 20px;;
+}
+small{
+    color: red;
+}
+
+.error-msg{
+    color: red;
+    margin-top: 10px;
+}

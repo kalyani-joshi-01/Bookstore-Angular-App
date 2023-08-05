@@ -1,0 +1,73 @@
+
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="container text-center">
+                    <img 
+                    class="img-fluid" 
+                    style="width: 90px;" 
+                    src="/assets/loginlogo.png">
+                </div>
+                <h1 class="text-center">Login Here</h1>
+             
+
+                <form (ngSubmit)="onSubmit()">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input 
+                        [(ngModel)]=" credentials.username"
+                        name="username"
+                        required 
+                        #username="ngModel"
+                        type="text" 
+                        matInput
+                        />
+                       
+                    </mat-form-field>
+                    <div>
+                        <small *ngIf="username.invalid && username.touched">Invalid username! Username is a required field</small>
+                    </div>
+                   
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input 
+                        [(ngModel)]="credentials.password"
+                        required
+                        name="username"
+                        #password="ngModel"
+                        type="password" 
+                        matInput
+                        />
+                    </mat-form-field>
+                    <div>
+                        <small *ngIf="password.invalid && password.touched">Password is a required field</small>
+                    </div>
+                    
+
+                    <div *ngIf="errormsg" class="error-msg">{{ errormsg }}</div>
+                    
+                    <div class="container text-center">
+                        <button 
+                        type="submit" 
+                        mat-raised-button 
+                        color="primary">
+                        Login
+                       </button>
+
+                        <button 
+                        style="margin-left: 10px;"
+                        type="reset" 
+                        mat-raised-button 
+                        color="accent">
+                        Reset
+                        </button>
+                    </div>
+                </form>
+                
+           
+            </div>
+        </div>
+    </div>
+</div>

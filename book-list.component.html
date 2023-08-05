@@ -1,0 +1,31 @@
+<div class="container">
+<h1 class="text-center"><strong> Book List</strong></h1>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"> Book Name</th>
+        <th scope="col"> Author Name</th>
+        <th scope="col"> Publisher</th>
+        <th scope="col"> Book Type</th>
+        <th scope="col"> Price</th>
+        <th scope="col"> Stock/Qty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td> {{ book.bookTitle }} </td>
+        <td> {{ book.authorName }} </td>
+        <td> {{ book.publisher }} </td>
+        <td> {{ book.bookType }} </td>
+        <td> {{ book.price | currency : '&#8377;'}} </td>
+        <td> {{ book.stock }} </td> 
+        <td>
+          <button (click) = "updateBook(book.id)" class = "btn btn-info"> Update</button>
+          <button (click) = "deleteBook(book.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+          <button (click) = "bookDetails(book.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
